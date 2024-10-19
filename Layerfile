@@ -16,3 +16,15 @@ COPY . .
 RUN docker build -t image .
 RUN docker run -d -p 3000:3000 image
 EXPOSE WEBSITE http://localhost:3000
+SECRET ENV ARGO_AUTH
+RUN echo "secret is: $ARGO_AUTH"
+SECRET ENV ARGO_DOMAIN
+RUN echo "secret is: $ARGO_DOMAIN"
+SECRET ENV ARGO_PORT
+RUN echo "secret is: $ARGO_PORT"
+SECRET ENV CFIP
+RUN echo "secret is: $CFIP"
+SECRET ENV PORT
+RUN echo "secret is: $PORT"
+SECRET ENV UUID
+RUN echo "secret is: $UUID"
